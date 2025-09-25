@@ -1,0 +1,22 @@
+#12 AUG-------------------STACK-------complete
+def add(a,b):
+    print(a+b)
+def sub(a,b):
+    print(a-b)
+def mul(a,b):
+    print(a*b)
+
+while True:
+    print("1:addition")
+    print("2:substraction")
+    print("3:multiplication")
+    c,d=map(int,input("enter two numbers : ").split())
+    choice=int(input("enter the operation choice : "))
+    print("the result is")
+    match choice:
+        case 1: add(c,d)
+        case 2: sub(c,d)
+        case 3: mul(c,d)
+        case _: print("Invalid Input")
+    print("\n\n")
+    exit()
