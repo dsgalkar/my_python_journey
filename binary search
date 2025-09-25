@@ -1,0 +1,27 @@
+#29 july------------------------------binary search
+
+l=[]
+i=int(input("enter no. of element :- "))
+for i in range (0,i): 
+    element=int(input("enter the element to list :- "))
+    l.append(element)
+print(l)
+
+n=len(l)
+key=int(input("enter the key :-  "))
+low=0
+high = n-1
+flag = False 
+while (low <= high):
+    mid = (low+high)//2
+    if (l[mid]==key):
+        print(key)
+        flag==True
+        print("key found")
+        break
+    elif (key<l[mid]):
+        high= mid-1
+    else:
+        low = mid+1
+else:
+    print("key not found")
