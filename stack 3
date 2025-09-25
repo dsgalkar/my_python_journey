@@ -1,0 +1,54 @@
+#12 AUG-------------------STACK`---------completed
+class stack:
+    def __init__(self,size):
+        self.n=size
+        self.top=-1         #-1 is the index of empty stack
+        self.s=[0]*size
+    def isEmpty(self):
+        if self.top==-1:
+            return True
+        else:
+            return False
+    def isFull(self):
+        if self.top==self.n-1:
+            return True
+        else:
+            return False
+    def push(self,x):
+        if self.isFull():
+            print("stack is full")
+        else:
+            self.top +=1
+            self.s[self.top]=x
+    def pop(self):
+        if self.isEmpty():
+            print("stack is empty")
+        else:
+            p=self.s[self.top]
+            print("the element",p,"is poped")
+            self.top-=1
+    def peek(self):
+        if self.isEmpty():
+            print("stack is full")
+        else:
+            print(self.s[self.top])
+            
+n=int(input("enter the size: "))
+s1=stack(n)
+while True:
+    print("1:push")
+    print("2:pop")
+    print("3:peek")
+    choice=int(input("enter the operation choice : "))
+    match choice :
+        case 1:
+            a=int(input("enter the element : "))
+            s1.push(a)
+        case 2:
+            p=s1.pop()
+        case 3:
+            s1.peek()
+        case _:
+            print("Invalid Input")
+    print("\n")
+    exit()
