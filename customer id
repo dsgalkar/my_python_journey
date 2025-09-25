@@ -1,0 +1,41 @@
+#30 july----------------------------assignment 1 dnyaneshwar galkar
+
+#customer id searching using binary search in function
+def customerfind():
+    customerID=[]
+    i=int(input("enter no. of customers :- "))
+    for i in range (0,i): 
+        customer=int(input("enter the customer to list :- "))
+        customerID.append(customer)
+        
+    print(customerID)
+    print("\nsearching the customer ID in binary")
+    n=len(customerID)
+    key=int(input("enter the customer ID to be searched :-  "))
+    low=0;k=1
+    high = n-1
+    flag = False 
+    while (low <= high):
+        mid = (low+high)//2
+        if (customerID[mid]==key):
+            print("the customer having customer ID",key,"is found by binary search at search no.",k)
+            flag==True
+            break
+        elif (key<customerID[mid]):
+            high= mid-1
+            k+=1        
+        else:
+            low = mid+1
+            k+=1
+    else:
+        print("customer ID",key,"not found at index",k,"by binary search")
+        
+        
+    for j in range (0,i):
+        if (customerID[j]== key):
+            print("the customer having customer ID",key,"is found by linear search at search no.",j+1)
+            break
+    else:
+        print("customer ID",key,"not found by linear search")
+        
+customerfind()
