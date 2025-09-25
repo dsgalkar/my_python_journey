@@ -1,0 +1,48 @@
+class Queue:
+    def __init__(self, size):
+        self.q = [0] * size
+        self.n = size
+        self.front = -1
+        self.rear = -1
+
+    def isempty(self):
+        return self.front == -1 and self.rear == -1
+
+    def isfull(self):
+        return self.rear == self.n - 1
+
+    def enqueue(self, x):
+        if self.isfull():
+            print("Queue is full")
+            return
+        if self.isempty():
+            self.front = 0
+            self.rear = 0
+        else:
+            self.rear += 1
+        self.q[self.rear] = x
+
+    def dequeue(self):
+        if self.isempty():
+            print("Queue is empty")
+            return
+        temp = self.q[self.front]
+        if self.front == self.rear:
+            self.front = -1
+            self.rear = -1
+        else:
+            self.front += 1
+        return temp
+
+
+q = Queue(5)
+print(q.isempty())  
+q.enqueue(1)
+q.enqueue(2)
+q.enqueue(3)
+print(q.dequeue())  
+print(q.dequeue())  
+print(q.isempty())  
+print(q.dequeue())  
+print(q.isempty())
+print(q.isfull())
