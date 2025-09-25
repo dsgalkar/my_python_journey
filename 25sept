@@ -1,4 +1,4 @@
-[9/23, 3:44 PM] Dnyaneshwar Galkar: class node:
+class node:
     def __init__(self, e):
         self.data = e
         self.next = None
