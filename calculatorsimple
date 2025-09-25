@@ -1,0 +1,24 @@
+def add(a,b):
+    print(a+b)
+def sub(a,b):
+    print(a-b)
+def mul(a,b):
+    print(a*b)
+
+while True:
+    print("1:addition")
+    print("2:substraction")
+    print("3:multiplication")
+    
+    c,d=map(int,input().split())
+    choice=int(input("enter the operation choice : "))
+    
+    if choice==1: 
+        add(c,d)
+    elif choice==2:
+        sub(c,d)
+    elif choice==3:
+        mul(c,d)
+    else:
+        print("Invalid Input")
+        exit()
