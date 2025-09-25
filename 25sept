@@ -1,0 +1,87 @@
+[9/23, 3:44 PM] Dnyaneshwar Galkar: class node:
+    def __init__(self, e):
+        self.data = e
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def display(self):
+        if self.head is None:
+            print("list is empty")
+        else:
+            current = self.head
+            while current is not None:
+                print(current.data)
+                current = current.next
+        print()
+
+    def addEnd(self, e):
+        newnode = node(e)
+        if self.head is None:
+            self.head = newnode
+        else:
+            current = self.head
+            while current.next is not None:
+                current = current.next
+            current.next = newnode
+        
+    
+    def addFront(self,e):
+        newnode=node(e)
+        if self.head==None:
+            self.head=newnode
+        else:
+            newnode.next=self.head
+            self.head=newnode
+       
+            
+    def deleteSpecific(self,key):
+        if self.head==None:
+            print("empty")
+        else:
+            if self.head.data==key:
+                self.head=self.head.next
+            else:
+                current=self.head
+                prev=None
+                while current.data!=key and current!=None:
+                    prev=current
+                    current=current.next
+                if current==None:
+                    print(key,"is not present in ")
+                else:
+                    prev.next=current.next
+        print()
+    
+    def update(self,oldvalue,newvalue):
+        if self.head==None:
+            print("empty")
+        else:
+            current=self.head
+            while current!= None:
+                if current.data==oldvalue:
+                    current.data=newvalue
+                    break
+                current=current.next
+                    
+            if current==None:
+                print("the key not found")
+        def sort(self):
+        if self.head==None:
+            print("list is empty")
+        else:
+            print("sorted list is")
+
+            
+ll=LinkedList()    
+ll.addEnd(33)
+ll.addEnd(335)
+ll.addEnd(345)
+ll.addFront(444)
+ll.display()
+ll.deleteSpecific(33)
+ll.display()
+ll.update(345,885)
+ll.display()
