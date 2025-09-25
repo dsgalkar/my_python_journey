@@ -1,4 +1,4 @@
-[8/12, 3:03 PM] Dnyaneshwar Galkar: class stack:
+class stack:
     def __init__(self,size):
         self.n=size
         self.top=-1         #-1 is the index of empty stack
@@ -50,4 +50,4 @@ while True:
 
 
 
-[8/12, 3:19 PM] Dnyaneshwar Galkar: in full use self
+in full use self
