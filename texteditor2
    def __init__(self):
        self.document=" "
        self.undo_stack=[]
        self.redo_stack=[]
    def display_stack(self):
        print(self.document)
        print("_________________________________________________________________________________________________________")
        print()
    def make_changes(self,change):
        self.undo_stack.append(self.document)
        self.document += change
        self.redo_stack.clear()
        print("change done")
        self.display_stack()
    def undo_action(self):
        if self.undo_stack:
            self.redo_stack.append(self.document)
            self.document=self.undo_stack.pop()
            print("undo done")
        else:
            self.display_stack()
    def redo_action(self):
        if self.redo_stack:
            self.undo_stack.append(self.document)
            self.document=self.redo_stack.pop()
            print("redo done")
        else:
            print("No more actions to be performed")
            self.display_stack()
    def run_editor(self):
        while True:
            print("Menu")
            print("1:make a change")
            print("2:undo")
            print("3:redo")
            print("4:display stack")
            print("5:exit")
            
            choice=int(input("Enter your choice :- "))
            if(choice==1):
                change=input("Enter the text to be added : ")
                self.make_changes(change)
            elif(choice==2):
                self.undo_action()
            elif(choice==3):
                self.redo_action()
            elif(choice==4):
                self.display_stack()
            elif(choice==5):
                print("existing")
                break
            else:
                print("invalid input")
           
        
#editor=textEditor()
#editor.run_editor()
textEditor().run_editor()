@@ -1,0 +1,59 @@
+class textEditor:
+    def __init__(self):
+        self.document=" "
+        self.undo_stack=[]
+        self.redo_stack=[]
+    def display_stack(self):
+        print(self.document)
+        print("_________________________________________________________________________________________________________")
+        print()
+    def make_changes(self,change):
+        self.undo_stack.append(self.document)
+        self.document += change
+        self.redo_stack.clear()
+        print("change done")
+        self.display_stack()
+    def undo_action(self):
+        if self.undo_stack:
+            self.redo_stack.append(self.document)
+            self.document=self.undo_stack.pop()
+            print("undo done")
+        else:
+            self.display_stack()
+    def redo_action(self):
+        if self.redo_stack:
+            self.undo_stack.append(self.document)
+            self.document=self.redo_stack.pop()
+            print("redo done")
+        else:
+            print("No more actions to be performed")
+            self.display_stack()
+    def run_editor(self):
+        while True:
+            print("Menu")
+            print("1:make a change")
+            print("2:undo")
+            print("3:redo")
+            print("4:display stack")
+            print("5:exit")
+            
+            choice=int(input("Enter your choice :- "))
+            if(choice==1):
+                change=input("Enter the text to be added : ")
+                self.make_changes(change)
+            elif(choice==2):
+                self.undo_action()
+            elif(choice==3):
+                self.redo_action()
+            elif(choice==4):
+                self.display_stack()
+            elif(choice==5):
+                print("existing")
+                break
+            else:
+                print("invalid input")
+           
+        
+#editor=textEditor()
+#editor.run_editor()
+textEditor().run_editor()
