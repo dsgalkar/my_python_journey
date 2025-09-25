@@ -1,0 +1,45 @@
+[9/9, 3:10 PM] Dnyaneshwar Galkar: #9/9/2025 --------------------------linear queue
+[9/9, 3:33 PM] Dnyaneshwar Galkar: event_queue = []
+
+def add_event(event_name):
+    event_queue.append(event_name)
+    print(f"Event {event_name} is added to events")
+
+def process_event():
+    if event_queue:
+        processed_event = event_queue.pop(0)
+        print(f"Processing event: {processed_event}")
+    else:
+        print("No event to be processed")
+
+def display_events():
+    if event_queue:
+        for i, event_name in enumerate(event_queue, 1):
+            print(f"{i}. {event_name}")
+    else:
+        print("No events are present")
+
+def main():
+    while True:
+        print("\nEvent Queue Menu:")
+        print("1. Add Event")
+        print("2. Process Event")
+        print("3. Display Events")
+        print("4. Exit")
+        
+        choice = input("Enter your choice: ")
+        
+        if choice == "1":
+            event_name = input("Enter event name: ")
+            add_event(event_name)
+        elif choice == "2":
+            process_event()
+        elif choice == "3":
+            display_events()
+        elif choice == "4":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
